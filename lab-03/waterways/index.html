@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Waterways of Georgia</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #d3d3d3;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			color: #3d3d3d;
+		}
+
+		section {
+			/* width: 960px; */
+			width: 80%;
+			margin: 20px auto;
+		}
+
+		h1 {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			font-size: 2.5em; /* The em unit. 3x the current size */
+			letter-spacing: .04em;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 700;
+			color: gray;
+			font-size: 1.25em;
+			letter-spacing: .04em;
+		}
+
+		p {
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+		a {
+			color: #005daa;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		ul {
+			padding-left: 20px;
+		}
+
+		li {
+			margin: 10px 0
+		}
+
+		#map {
+			width: 100%;
+			margin: 10px auto;
+			border: 2px solid #d3d3d3;
+		}
+
+.max-image-width{
+	width:100%;
+}
+
+.image-link{
+		display:block;
+		margin:10px 0;
+}
+		/* add custom style class here */
+
+	</style>
+</head>
+
+<body>
+    <!-- Experiment with layout elements to maximize presentation of map-->
+    <div id='map'>
+        <img src="ga_waterways_1200px.png" alt="Map of Georgia's major watereways" class="max-image-width">
+    </div>
+	<section>
+        <a href="ga_waterways_8000px.png" target="blank" class="image-link"> Higher resolution version</a>
+		<!-- This is an HTML comment. Find the comments below and follow the instructions. -->
+
+		<h1>Georgia Waterways</h1>
+
+		<!-- Add you information below -->
+		<h2>Authored by: Jessica Freeman</h2>
+		<p>Map compiled by Jessica Freeman for Digital Mapping MAP671, July 2018<br>
+			Software used: QGIS2.18.3 on Ubuntu 16.04<br> <!-- Did you use the exact same version of QGIS and OS that I did? Can't download 2.18.3. -->
+			Data acquired from: National Atlas of the United States, 1:1,000,000-Scale datasets, March 2016, 2nd Edition <br>
+			Link to the data source: <a href="https://nationalmap.gov/small_scale/atlasftp.html" target="blank">The National Map Small-Scale website</a>. </p>
+        <p>What is the CRS of this map?</p>
+		<ul>
+			<!-- Change the following contacts to your personal brand, whatever you want it to be! -->
+			<li>See New Maps Plus projects on GitHub: <a href="https://github.com/newmapsplus">New Maps Plus</a></li>
+			<li>Follow New Maps Plus on twitter: <a href="https://twitter.com/NewMapsPlus">@NewMapsPlus</a></li>
+			<li>Visit New Maps Plus <a href='https://newmapsplus.uky.edu/explore-new-maps'>mapping portfolio</a>.</li>
+		</ul>
+	</section>
+
+</body>
+
+</html>
