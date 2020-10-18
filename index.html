@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Popular Cities in the Peach State</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: whitesmoke;
+      font-family: "Noto Sans", sans-serif;
+      color: #3d3d3d;
+    }
+
+    section {
+      width: 960px;
+      margin: 20px auto;
+    }
+
+    h1 {
+      font-family: "Lora", serif;
+      letter-spacing: .04em;
+    }
+
+    h2 {
+      font-family: "Lora", serif;
+      letter-spacing: .04em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    a {
+      color: #005daa;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0
+    }
+
+    #map {
+      width: 960px;
+      height: 540px;
+      margin: 10px auto;
+      border: 2px solid #d3d3d3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <h1>Popular Cities in the Peach State</h1>
+
+    <div id='map'></div>
+
+    <h2>City population patterns in the Georgia</h2>
+
+    <p>Three popular cities in the Peach State, Georgia, are Atlanta, Athens, and Savannah. All are popular destinations. Atlanta is the capital of Georgia with a large population of 486,290. Athens is a college town, home to the Univeristy of
+      Georgia. While the city is smaller, it attracts people with its vibrant music and art scene. Finally Savannah, this is the oldest city in Georgia (established 1733). Please select one of the three markers on the map for population information.
+    </p>
+
+    <p>Map authored by Jessica Freeman, New Maps Plus - MAP672</p>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"></script>
+  <script>
+    // map options
+    var options = {
+      center: [33.9519, -83.3576],
+      zoom: 7
+    }
+
+    // create Leaflet map
+    var map = L.map('map', options);
+
+    // request some slippy map tiles
+    var tiles = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: 'abcd',
+      minZoom: 1,
+      maxZoom: 16,
+      ext: 'png'
+    });
+
+    // add tiles to the map
+    map.addLayer(tiles);
+
+    // STORING DATA AS VARIABLES IN ARRAYS
+
+    // Use different color marker
+    // from https://github.com/pointhi/leaflet-color-markers
+
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // ADDING FIRST MARKER TO MAP
+    // variables referencing data values
+    var city1Name = "Atlanta", // string value
+      city1Coords = [33.7490, -84.3880], // array value
+      city1Pop = 486290, // numeric value
+      city1Capital = true, // boolean value
+      city1State = "Georgia"; // string value
+
+    // arrays of data
+    // var cities = [city1Name], // city1Name is the zero index of the array
+    //   coords = [city1Coords],
+    //   populations = [city1Pop],
+    //   capitals = [city1Capital],
+    //   states = [city1State];
+    // // creating a string of the tooltip content
+    // var city1Tooltip_orig = "<b>" + cities[0] + "</b>" +
+    //   "<br><b>population</b>: " + populations[0].toLocaleString();
+
+    // var city1Tooltip = `<b>${cities[0]}</b><br><b>population</b>: ${populations[0].toLocaleString()}`;
+    // console.log(cities[0]);
+    // console.log(populations[0]);
+    // // if city is a capital city
+    // if (capitals[0] == true) {
+    //   // concatenate a string to the existing string value
+    //   city1Tooltip += "<br>Capital of " + states[0];
+    // }
+
+    // // create the Leaflet marker using the coordinates
+    // L.marker(coords[0], {icon: redIcon})
+    //   .addTo(map) // add it to the map
+    //   .bindTooltip(city1Tooltip); // bind the tooltip
+
+    // ADDING SECOND MARKER TO MAP
+
+    // variables referencing data values
+    var city2Name = "Savannah",
+      city2Coords = [32.0809, -81.0912],
+      city2Pop = 146444,
+      city2Capital = false,
+      city2State = "Georgia";
+
+    // arrays of data
+    // var cities = [city2Name],
+    //   coords = [city2Coords],
+    //   populations = [city2Pop],
+    //   capitals = [city2Capital],
+    //   states = [city2State];
+    // // creating a string of the tooltip content
+    // var city2Tooltip = "<b>" + cities[0] + "</b>" +
+    //   "<br><b>population</b>: " + populations[0].toLocaleString();
+
+    // // if city is a capital city
+    // if (capitals[0] == true) {
+    //   // concatenate a string to the existing string value
+    //   city2Tooltip += "<br>Capital of " + states[0];
+    // }
+
+    // // create the Leaflet marker using the coordinates
+    // L.marker(coords[0], {icon: redIcon})
+    //   .addTo(map) // add it to the map
+    //   .bindTooltip(city2Tooltip); // bind the tooltip
+
+    //ADDING THIRD MARKER
+    // variables referencing data values
+    var city3Name = "Athens",
+      city3Coords = [33.9519, -83.3576],
+      city3Pop = 125691,
+      city3Capital = false,
+      city3State = "Georgia";
+    // arrays of data
+    // var cities = [city3Name],
+    //   coords = [city3Coords],
+    //   populations = [city3Pop],
+    //   capitals = [city3Capital],
+    //   states = [city3State];
+
+    // // creating a string of the tooltip content
+    // var city3Tooltip = "<b>" + cities[0] + "</b>" +
+    //   "<br><b>population</b>: " + populations[0].toLocaleString();
+
+    // // if city is a capital city
+    // if (capitals[0] == true) {
+    //   // concatenate a string to the existing string value
+    //   city3Tooltip += "<br>Capital of " + states[0];
+    // }
+
+    // // create the Leaflet marker using the coordinates
+    // L.marker(coords[0], {icon: redIcon})
+    //   .addTo(map) // add it to the map
+    //   .bindTooltip(city3Tooltip); // bind the tooltip
+
+    // arrays of data
+    var cities = [city1Name, city2Name, city3Name],
+      coords = [city1Coords, city2Coords, city3Coords],
+      populations = [city1Pop, city2Pop, city3Pop],
+      capitals = [city1Capital],
+      states = [city1State];
+
+ //// adding pop-ups to the map 
+ 
+
+    // creating a string of the Popup content
+    var city1Popup = `<b>${cities[0]}</b><br>
+                      <b>population</b>: ${populations[0].toLocaleString()}`;
+
+    // creating a string of the Popup content
+    var city2Popup = `<b>${cities[1]}</b><br>
+                      <b>population</b>: ${populations[1].toLocaleString()}`;
+
+    // creating a string of the Popup content
+    var city3Popup = `<b>${cities[2]}</b><br>
+                      <b>population</b>: ${populations[2].toLocaleString()}`;
+
+    // if city is a capital city
+    if (capitals[0] == true) {
+      // concatenate a string to the existing string value
+      city1Popup += `<br>Capital of ${states[0]}`;
+    }
+
+
+     // Use different color marker
+    // from https://github.com/pointhi/leaflet-color-markers
+
+    var redIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // create the Leaflet marker using the coordinates
+    L.marker(coords[0], {icon: redIcon})
+      .addTo(map) 
+      .bindPopup(city1Popup); // bind the Popup
+
+    // ADDING SECOND MARKER TO MAP
+    L.marker(coords[1], {icon: redIcon})
+      .addTo(map) // add it to the map
+      .bindPopup(city2Popup); // bind the Popup
+
+ // adding third marker 
+      L.marker(coords[2], {icon: redIcon})
+      .addTo(map) // add it to the map
+      .bindPopup(city3Popup); // bind the Popup
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+
+
+
+    // creating a string of the tooltip content
+
+    var city2Tooltip = "<b>" + cities[1] + "</b>" +
+      "<br><b>population</b>: " + populations[1];
+
+    var city3Tooltip = "<b>" + cities[2] + "</b>" +
+      "<br><b>population</b>: " + populations[2];
