@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Play, Eat, Walk Local! Forsyth County, GA</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #d3d3d3;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: #3d3d3d;
+    }
+
+    section {
+      width: 80%;
+      margin: 10px auto;
+    }
+
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 2.5em;
+      /* The em unit. 2.5x the current size */
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      color: gray;
+      font-size: 1.25em;
+      letter-spacing: .04em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    a {
+      color: #005daa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0
+    }
+
+    #map {
+      width: 100%;
+      margin: 0px auto;
+
+    }
+
+    .max-image-width {
+      width: 100%;
+    }
+
+
+    .linkbox {
+      margin: 3px 0 20px 0;
+      display: block;
+      font-weight: 300;
+    }
+
+    hr {
+      border: 0px;
+      border-bottom: 1px solid #3d3d3d;
+      padding-top: 20px;
+    }
+
+    /* Use float property to make two-column layout. */
+
+    .first-column {
+      float: left;
+      width: 48%;
+      padding-right: 20px;
+    }
+
+    .column {
+      float: left;
+      width: 48%;
+    }
+
+    /* Clear floats after the columns */
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* When browser is 800px wide or less */
+
+    @media screen and (max-width: 800px) {
+      .first-column,
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add map to top of page and make it stretch to fill browser window. -->
+  <div id='map'>
+      <!-- Add your custom HTML here -->
+        <img class="max-image-width" src="ForsythCounty_CentralPark_1200px.png" alt="Forsyth County, Georgia - Central Park & Recreation Center">
+        <style>/max-image-width {25%;}</style>
+  </div>
+
+  <section>
+    <a href='ForsythCounty_CentralPark_8000px.png' class="linkbox">Full screen version</a>
+
+    <h1>Play, Eat, Walk Local! Assessment of Central Park and Recreation Center in Forsyth County, Georgia</h1>
+    <h2>Authored by: Jessica Freeman</h2>
+
+    <div class="row">
+
+      <!-- First column, the left half -->
+      <div class="first-column">
+        <p>This map involved the analysis of the proximity of restaurants to parks in Forsyth County, Georgia. Forsyth County is my home town which has seen a lot of growth over the last decade, yet is still fairly spread out. It was eye opening to see that there are almost no restaurants within walking distance of any park. Even for the map I provided here, I would not recommend walking to those restaurants as the Keith Bridge Road is very busy and is a major access point to Highway 400 (connection to Atlanta). It will be interesting to see if with the recent urban development if a biking/walking community will become more popular.</p>
+        <p><a href="FoCo_restaurant_pt.GeoJSON">Link to Forsyth County Restaurant GeoJSON</a></p>
+        <p>Click <a href="https://parks.forsythco.com/Portals/1/Documents/Maps/Park%20Maps/Individual%20Park%20Maps/3%20-%20Central%20Park%20Vignette%2008-24-2016_HQ.pdf">HERE</a> for Central Park Facilities Map
+        <p>Photographs and facilities map pulled from <a href= 'https://parks.forsythco.com/Parks-and-Facilities/Parks/Central-ParkForsyth'> County Parks and Recreation</a> website.
+        <h3>Map details</h3>
+        <p>Map prepared by Jessica Freeman for Digital Mapping MAP671, August 2018
+      <br>Software used: QGIS 2.18.21 on Windows 10
+      <br>Coordinate reference system: NAD83(NSRS2007)/Georgia East (ftUS) (EPSG: 3519).
+      <br>All data provided by OpenStreetMap (OMS) <a href='https:www.openstreetmap.org'>(https://www.openstreetmap.org)</a>. </p>
+      </div>
+
+      <!-- Second column, the right half -->
+      <div class="column">
+        <!-- Challenge photograph -->
+        <img class="max-image-width" src="Entrance2.thumbnail.jpg">
+        <p class="linkbox">Photo of Central Park Entrance</p>
+        <img class="max-image-width" src="Playground.thumbnail.jpg">
+        <p class="linkbox">Photo of Playground at Central Park</p>
+      </div>
+    </div>
+    <p>
+      University of Kentucky New Maps Plus, Spring 2018.
+    </p>
+    <hr>
+    <ul>
+			<!-- Change the following contacts to your personal brand, whatever you want it to be! -->
+			<li>Follow me on instagram <a href="https://instagram.com/">@jessica0405</a></li> <!-- or any other social media site -->
+      <li>See my projects on GitHub: <a href="https://github.com/jmfr236">New Maps Plus - jmfr236</a></li>
+			<li>Visit my <a href='#'>mapping portfolio</a>.</li>
+		</ul>
+  </section>
+
+</body>
+</html>
